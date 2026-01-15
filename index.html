@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holy SMP</title>
+  <meta name="description" content="Holy SMP adalah server Minecraft Anarchy dengan kebebasan penuh, tanpa reset, dan komunitas solid." />
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-soft: #111826;
+      --primary: #7c7cff;
+      --secondary: #00e5ff;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #0f172a;
+      --border: #1f2937;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, #1b2350 0%, transparent 60%),
+                  radial-gradient(1000px 600px at 90% 10%, #003a44 0%, transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      backdrop-filter: blur(14px);
+      background: rgba(11, 15, 20, 0.6);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      color: var(--primary);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 24px;
+      font-weight: 500;
+      transition: color 0.25s ease;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: var(--muted);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.15s;
+    }
+
+    .hero .buttons {
+      margin-top: 36px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #000;
+      text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 10px 30px rgba(124,124,255,0.35);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--text);
+      box-shadow: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(124,124,255,0.45);
+    }
+
+    /* Sections */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 24px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .card:hover .admin-avatar {
+  box-shadow: 0 0 30px rgba(124,124,255,0.35);
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+    /* Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent), var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card .btn {
+  width: 100%;
+  text-align: center;
+}
+
+    .admin-avatar {
+  width: 100%;
+  height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  background: #020617;
+}
+
+.admin-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      background: rgba(11,15,20,0.6);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--muted);
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">HOLY SMP</div>
+      <div>
+        <a href="#about">Server</a>
+        <a href="#admin">Admin</a>
+        <a href="#store">Store</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>HOLY SMP</h1>
+        <p>Server Minecraft <b>Anarchy</b> economy di indonesia. Bangun, jarah, dan bertahan hidup dengan caramu sendiri</p>
+        <div class="buttons">
+          <a href="#about" class="btn">Explore Server</a>
+          <a href="#store" class="btn secondary">Store</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="reveal">
+      <div class="section-title">
+        <h2>Tentang Server</h2>
+        <p>server economy pvp di indonesia</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>True Anarchy</h3>
+          <p>Tidak ada claim, tidak ada batasan PvP. Semua strategi diperbolehkan.</p>
+        </div>
+        <div class="card">
+          <h3>economy server</h3>
+          <p>dapatkan uang dan jual barang barangmu untuk menjadi orang terkaya dan terkuat.</p>
+        </div>
+        <div class="card">
+          <h3>Free To Play</h3>
+          <p>Server Free To play, skill mu yang menentukan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="admin" class="reveal">
+  <div class="section-title">
+    <h2>Admin Team</h2>
+    <p>Admin aktif, minim intervensi gameplay</p>
+  </div>
+
+  <div class="grid">
+    <!-- OWNER -->
+    <div class="card">
+      <div class="admin-avatar">
+        <img src="https://files.catbox.moe/jnqxo6.png" alt="Owner Holy SMP">
+      </div>
+      <h3>ABAGI (Owner)</h3>
+      <p>Mengelola server, performa, dan arah komunitas.</p>
+    </div>
+
+    <!-- DEVELOPER -->
+    <div class="card">
+      <div class="admin-avatar">
+        <img src="https://files.catbox.moe/ty7125.png" alt="Developer Holy SMP">
+      </div>
+      <h3>Hexamika (Developer)</h3>
+      <p>Menangani plugin, keamanan, dan optimasi server.</p>
+    </div>
+  </div>
+</section>
+
+
+    <section id="store" class="reveal">
+  <div class="section-title">
+    <h2>Store</h2>
+    <p>Dukung server tanpa merusak keseimbangan gameplay</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Rank</h3>
+      <p>Rank eksklusif dengan kosmetik keren & warna nama.</p>
+      <a class="btn" href="https://wa.me/6281529466490?text=bang%20mau%20beli%20rank%20HolySMP" target="_blank">
+        Beli via WhatsApp
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Donate</h3>
+      <p>Bantu donasi server agar dapat berkembang.</p>
+      <a class="btn" href="https://sociabuzz.com/hexamika/support" target="_blank">
+        Donasi Sekarang
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Kits</h3>
+      <p>Kits bantuan untuk player yang kesusahan.</p>
+      <a class="btn" href="https://wa.me/6281529466490?text=bang%20mau%20beli%20kit%20HolySMP" target="_blank">
+        Beli via WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+
+    <section id="contact" class="reveal">
+  <div class="section-title">
+    <h2>Contact & Grup</h2>
+    <p>Hubungi kami & bergabung dengan komunitas</p>
+  </div>
+
+  <div class="grid">
+    <!-- Discord -->
+    <div class="card">
+      <h3>Discord</h3>
+      <p>Join komunitas dan update server.</p>
+      <p><b>discord.gg/holysmp</b></p>
+      <a class="btn" href="https://discord.gg/holysmp" target="_blank">
+        Join Discord
+      </a>
+    </div>
+
+    <!-- WhatsApp -->
+    <div class="card">
+      <h3>Grup WhatsApp</h3>
+      <p>Komunitas resmi server di WhatsApp.</p>
+      <p><b>Join via link</b></p>
+      <a class="btn" href="https://chat.whatsapp.com/IC1SBYnzQ6ZC48VxrIbk7l" target="_blank">
+        Join WhatsApp
+      </a>
+    </div>
+
+    <!-- IP -->
+    <div class="card">
+      <h3>IP Server</h3>
+      <p>Alamat server Minecraft</p>
+      <p>
+        <b id="server-ip" style="cursor:pointer;">
+          bsc1.kazuostore.id:25568
+        </b>
+      </p>
+      <small style="color: var(--muted);">
+        Klik IP untuk menyalin
+      </small>
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    <p>© 2026 Holy SMP — Minecraft Anarchy Server</p>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(r => observer.observe(r));
+  </script>
+
+</body>
+</html>
