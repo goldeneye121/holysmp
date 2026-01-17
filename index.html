@@ -223,8 +223,13 @@
     linear-gradient(180deg, rgba(255,60,60,0.06), transparent),
     var(--card);
   border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-
 
 
     .card:hover {
@@ -243,10 +248,20 @@
     }
 
     .card .btn {
+  margin-top: auto; /* INI KUNCI */
   width: 100%;
   text-align: center;
 }
 
+    .card ul {
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+    .card ul li {
+  margin-bottom: 6px;
+}
+    
     .admin-avatar {
   width: 100%;
   height: 180px;
@@ -261,6 +276,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+    .copy-ip {
+  cursor: pointer;
+  color: var(--secondary);
+}
+
+.copy-ip:hover {
+  text-decoration: underline;
 }
 
 
@@ -472,37 +496,36 @@
 </section>
 
 
-    <section id="contact" class="reveal">
+<section id="contact" class="reveal">
   <div class="section-title">
     <h2>Contact & Grup</h2>
     <p>Hubungi kami & bergabung dengan komunitas</p>
   </div>
 
-    <!-- WhatsApp -->
+  <div class="grid">
+
     <div class="card">
       <h3>Grup WhatsApp</h3>
       <p>Komunitas resmi server di WhatsApp.</p>
-      <p><b>Join via link</b></p>
       <a class="btn" href="https://chat.whatsapp.com/IC1SBYnzQ6ZC48VxrIbk7l" target="_blank">
         Join WhatsApp
       </a>
     </div>
 
-    <!-- IP -->
     <div class="card">
       <h3>IP Server</h3>
       <p>Alamat server Minecraft</p>
       <p>
-        <b id="server-ip" style="cursor:pointer;">
+        <b id="server-ip" class="copy-ip">
           holysmp.serveminecraft.net:20053
         </b>
       </p>
-      <small style="color: var(--muted);">
-        Klik IP untuk menyalin
-      </small>
+      <small>Klik IP untuk menyalin</small>
     </div>
+
   </div>
 </section>
+
 
 
   <footer>
@@ -522,6 +545,20 @@
 
     reveals.forEach(r => observer.observe(r));
   </script>
+<script>
+  const ip = document.getElementById("server-ip");
+
+  if (ip) {
+    ip.addEventListener("click", () => {
+      navigator.clipboard.writeText(ip.innerText).then(() => {
+        ip.innerText = "IP disalin!";
+        setTimeout(() => {
+          ip.innerText = "holysmp.serveminecraft.net:20053";
+        }, 1500);
+      });
+    });
+  }
+</script>
 
 </body>
 </html>
