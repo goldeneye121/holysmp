@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Holy SMP</title>
-  <meta name="description" content="Holy SMP adalah server Minecraft Anarchy dengan kebebasan penuh, tanpa reset, dan komunitas solid." />
+  <meta name="description" content="Holy SMP adalah server Minecraft yang menggabungkan economy dan Anarchy>
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -117,6 +117,42 @@
       animation: fadeUp 1s ease forwards;
       animation-delay: 0.3s;
     }
+    .hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo img {
+  width: 100%;
+  max-width: 360px;
+  filter: drop-shadow(0 20px 60px rgba(124,124,255,0.4));
+  animation: fadeUp 1s ease forwards;
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+}
 
     .btn {
       padding: 14px 28px;
@@ -275,15 +311,30 @@
 
   <main>
     <section class="hero">
-      <div>
-        <h1>HOLY SMP</h1>
-        <p>Server Minecraft <b>Anarchy</b> economy di indonesia. Bangun, jarah, dan bertahan hidup dengan caramu sendiri</p>
-        <div class="buttons">
-          <a href="#about" class="btn">Explore Server</a>
-          <a href="#store" class="btn secondary">Store</a>
-        </div>
+  <div class="hero-content">
+    
+    <!-- KIRI: TEXT -->
+    <div class="hero-text">
+      <h1>HOLY SMP</h1>
+      <p>
+        Server Minecraft <b>Anarchy</b> economy di Indonesia.  
+        Bangun, jarah, dan bertahan hidup dengan caramu sendiri.
+      </p>
+
+      <div class="buttons">
+        <a href="#about" class="btn">Explore Server</a>
+        <a href="#store" class="btn secondary">Store</a>
       </div>
-    </section>
+    </div>
+
+    <!-- KANAN: LOGO -->
+    <div class="hero-logo">
+      <img src="https://i.ibb.co.com/bT1KK8z/quality-restoration-20260117102326768.png" alt="Holy SMP Logo">
+    </div>
+
+  </div>
+</section>
+
 
     <section id="about" class="reveal">
       <div class="section-title">
@@ -316,7 +367,7 @@
     <!-- OWNER -->
     <div class="card">
       <div class="admin-avatar">
-        <img src="https://files.catbox.moe/jnqxo6.png" alt="Owner Holy SMP">
+        <img src="https://i.ibb.co.com/603yNykj/avatar-Head-1.png" alt="Owner Holy SMP">
       </div>
       <h3>ABAGI (Owner)</h3>
       <p>Mengelola server, performa, dan arah komunitas.</p>
@@ -325,7 +376,7 @@
     <!-- DEVELOPER -->
     <div class="card">
       <div class="admin-avatar">
-        <img src="https://files.catbox.moe/ty7125.png" alt="Developer Holy SMP">
+        <img src="https://i.ibb.co.com/dx2chZ0/hexamika.png" alt="Developer Holy SMP">
       </div>
       <h3>Hexamika (Developer)</h3>
       <p>Menangani plugin, keamanan, dan optimasi server.</p>
@@ -341,30 +392,79 @@
   </div>
 
   <div class="grid">
-    <div class="card">
-      <h3>Rank</h3>
-      <p>Rank eksklusif dengan kosmetik keren & warna nama.</p>
-      <a class="btn" href="https://wa.me/6281529466490?text=bang%20mau%20beli%20rank%20HolySMP" target="_blank">
-        Beli via WhatsApp
-      </a>
-    </div>
 
-    <div class="card">
-      <h3>Donate</h3>
-      <p>Bantu donasi server agar dapat berkembang.</p>
-      <a class="btn" href="https://sociabuzz.com/hexamika/support" target="_blank">
-        Donasi Sekarang
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>Kits</h3>
-      <p>Kits bantuan untuk player yang kesusahan.</p>
-      <a class="btn" href="https://wa.me/6281529466490?text=bang%20mau%20beli%20kit%20HolySMP" target="_blank">
-        Beli via WhatsApp
-      </a>
-    </div>
+  <!-- RANK -->
+  <div class="card">
+    <h3>Rank VIP</h3>
+    <p>Rank eksklusif untuk membuka fitur</p>
+    <ul style="color: var(--muted); font-size: 0.95rem; padding-left: 18px; margin: 12px 0;">
+      <li>/kit vip</li>
+      <li>/tools</li>
+      <li>open enderchest via /ce</li>
+      <li>/feed</li>
+      <li>mendapatkan tag unik Nolifer</li>
+      <li>Tidak mempengaruhi PvP</li>
+    </ul>
+    <a class="btn" href="https://wa.me/6281529466490?text=bang%20mau%20beli%20rank%20VIP%20HOLYSMP" target="_blank">
+      Beli via WhatsApp
+    </a>
   </div>
+
+  <div class="card">
+    <h3>Rank VIP+</h3>
+    <p>Rank eksklusif untuk membuka fitur</p>
+    <ul style="color: var(--muted); font-size: 0.95rem; padding-left: 18px; margin: 12px 0;">
+      <li>/kit vip+</li>
+      <li>/tools</li>
+      <li>open enderchest via /ce</li>
+      <li>/feed</li>
+      <li>/fly</li>
+      <li>/anvil</li>
+      <li>mendapatkan tag unik Nolifer dan Goat</li>
+      <li>Tidak mempengaruhi PvP</li>
+    </ul>
+    <a class="btn" href="https://wa.me/6281529466490?text=bang%20mau%20beli%20rank%20VIP+%20HOLYSMP" target="_blank">
+      Beli via WhatsApp
+    </a>
+  </div>
+
+ <div class="card">
+    <h3>Rank MVP</h3>
+    <p>Rank eksklusif untuk membuka fitur</p>
+    <ul style="color: var(--muted); font-size: 0.95rem; padding-left: 18px; margin: 12px 0;">
+      <li>/kit MVP</li>
+      <li>/tools</li>
+      <li>open enderchest via /ce</li>
+      <li>/feed</li>
+      <li>/fly</li>
+      <li>/anvil</li>
+      <li>/heal</li>
+      <li>/repair</li>
+      <li>mendapatkan tag unik Nolifer, Goat, Heart, dan StarLover</li>
+      <li>Tidak mempengaruhi PvP</li>
+    </ul>
+    <a class="btn" href="https://wa.me/6281529466490?text=bang%20mau%20beli%20rank%20MVP%20HOLYSMP" target="_blank">
+      Beli via WhatsApp
+    </a>
+  </div>
+
+  <!-- DONATE -->
+  <div class="card">
+    <h3>Donate</h3>
+    <p>Dukungan murni untuk server.</p>
+    <ul style="color: var(--muted); font-size: 0.95rem; padding-left: 18px; margin: 12px 0;">
+      <li>Membantu biaya server</li>
+      <li>Menjaga server tetap online</li>
+      <li>Tidak ada item pay-to-win</li>
+      <li>Nama donatur dicatat admin</li>
+    </ul>
+    <a class="btn" href="https://sociabuzz.com/hexamika/support" target="_blank">
+      Donasi Sekarang
+    </a>
+  </div>
+
+</div>
+
 </section>
 
 
@@ -373,17 +473,6 @@
     <h2>Contact & Grup</h2>
     <p>Hubungi kami & bergabung dengan komunitas</p>
   </div>
-
-  <div class="grid">
-    <!-- Discord -->
-    <div class="card">
-      <h3>Discord</h3>
-      <p>Join komunitas dan update server.</p>
-      <p><b>discord.gg/holysmp</b></p>
-      <a class="btn" href="https://discord.gg/holysmp" target="_blank">
-        Join Discord
-      </a>
-    </div>
 
     <!-- WhatsApp -->
     <div class="card">
@@ -401,7 +490,7 @@
       <p>Alamat server Minecraft</p>
       <p>
         <b id="server-ip" style="cursor:pointer;">
-          bsc1.kazuostore.id:25568
+          holysmp.serveminecraft.net:20053
         </b>
       </p>
       <small style="color: var(--muted);">
