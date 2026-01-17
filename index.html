@@ -11,16 +11,17 @@
 
   <style>
     :root {
-      --bg: #0b0f14;
-      --bg-soft: #111826;
-      --primary: #7c7cff;
-      --secondary: #00e5ff;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --card: #0f172a;
-      --border: #1f2937;
-      --radius: 18px;
-    }
+  --bg: #070202;            
+  --bg-soft: #120404;       
+  --primary: #d11616;      
+  --secondary: #ff3b3b;    
+  --text: #f5f5f5;          
+  --muted: #c7a3a3;         
+  --card: #120505;          
+  --border: #3a0b0b;        
+  --radius: 18px;
+}
+
 
     * {
       box-sizing: border-box;
@@ -30,14 +31,16 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(1200px 600px at 20% -10%, #1b2350 0%, transparent 60%),
-                  radial-gradient(1000px 600px at 90% 10%, #003a44 0%, transparent 55%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(900px 500px at 15% -10%, #3a0b0b 0%, transparent 60%),
+    radial-gradient(900px 500px at 85% 10%, #5c0f0f 0%, transparent 55%),
+    linear-gradient(180deg, #070202, #0b0202);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
 
     /* Navbar */
     header {
@@ -46,7 +49,7 @@
       left: 0;
       right: 0;
       backdrop-filter: blur(14px);
-      background: rgba(11, 15, 20, 0.6);
+      background: rgba(0, 0, 0, 0.6);
       border-bottom: 1px solid var(--border);
       z-index: 1000;
     }
@@ -92,7 +95,7 @@
     .hero h1 {
       font-size: clamp(2.8rem, 6vw, 4.5rem);
       font-weight: 900;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: linear-gradient(135deg, #ff4b4b, #b90d0d);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 20px;
@@ -139,7 +142,7 @@
 .hero-logo img {
   width: 100%;
   max-width: 360px;
-  filter: drop-shadow(0 20px 60px rgba(124,124,255,0.4));
+  filter: drop-shadow(0 25px 70px rgba(255, 40, 40, 0.55));
   animation: fadeUp 1s ease forwards;
 }
 
@@ -155,16 +158,21 @@
 }
 
     .btn {
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-weight: 600;
-      border: 1px solid var(--border);
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #000;
-      text-decoration: none;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      box-shadow: 0 10px 30px rgba(124,124,255,0.35);
-    }
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid #5a0f0f;
+  background: linear-gradient(135deg, #ff3b3b, #a80e0e);
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 12px 40px rgba(255, 40, 40, 0.35);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 55px rgba(255, 40, 40, 0.55);
+}
 
     .btn.secondary {
       background: transparent;
@@ -174,7 +182,7 @@
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 16px 40px rgba(124,124,255,0.45);
+      box-shadow: 0 16px 40px rgba(192, 15, 15, 0.45);
     }
 
     /* Sections */
@@ -196,7 +204,7 @@
     }
 
     .card:hover .admin-avatar {
-  box-shadow: 0 0 30px rgba(124,124,255,0.35);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
     }
 
     .section-title p {
@@ -211,21 +219,17 @@
     }
 
     .card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent), var(--card);
+  background:
+    linear-gradient(180deg, rgba(255,60,60,0.06), transparent),
+    var(--card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 220px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
+
 
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      box-shadow: 0 25px 70px rgba(120, 0, 0, 0.65);
     }
 
     .card h3 {
@@ -250,7 +254,7 @@
   overflow: hidden;
   margin-bottom: 16px;
   border: 1px solid var(--border);
-  background: #020617;
+  background: #170202;
 }
 
 .admin-avatar img {
@@ -263,7 +267,7 @@
     /* Footer */
     footer {
       border-top: 1px solid var(--border);
-      background: rgba(11,15,20,0.6);
+      background: rgba(115, 17, 17, 0.615);
       backdrop-filter: blur(10px);
       text-align: center;
       padding: 32px 24px;
